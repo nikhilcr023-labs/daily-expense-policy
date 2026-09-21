@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Daily Expense: Track&Save</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #3b82f6;
+                --primary-dark: #60a5fa;
+                --bg-color: #0b0f19;
+                --surface-color: #131b2e;
+                --text-main: #f1f5f9;
+                --text-muted: #94a3b8;
+                --border-color: #1e293b;
+                --badge-bg: #1e293b;
+                --badge-text: #60a5fa;
+                --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.68;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background-color: var(--surface-color);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px 18px;
+            }
+        }
+
+        .header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 700;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 2px;
+        }
+
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .badge {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .app-meta {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            background: var(--bg-color);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .meta-item strong {
+            display: block;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2px;
+        }
+
+        .meta-item span {
+            color: var(--text-muted);
+            word-break: break-all;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 20px 0 8px;
+            color: var(--text-main);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        ul, ol {
+            margin: 0 0 16px 22px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: var(--bg-color);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        td {
+            color: var(--text-muted);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html" class="active">Terms of Service</a>
+        </div>
+
+        <header class="header">
+            <div class="badge-group">
+                <span class="badge">Legal Terms</span>
+                <span class="badge">Google Play Compliant</span>
+            </div>
+            <h1>Terms of Service</h1>
+            <p class="app-meta">Official Terms of Service and End User License Agreement for <strong>Daily Expense: Track&Save</strong></p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <strong>Application Name</strong>
+                    <span>Daily Expense: Track&Save</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Developer / Organization</strong>
+                    <span>nikhilcrlabs</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Package Name</strong>
+                    <span>com.spendsense.xydgqk</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Contact Email</strong>
+                    <span><a href="mailto:nikhilcr023@gmail.com">nikhilcr023@gmail.com</a></span>
+                </div>
+                <div class="meta-item">
+                    <strong>Effective Date</strong>
+                    <span>September 21, 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+                By downloading, installing, accessing, or using <strong>Daily Expense: Track&Save</strong> ("the App"), developed and operated by <strong>nikhilcrlabs</strong> ("Developer", "we", "us", or "our"), you agree to be legally bound by these Terms of Service ("Terms") and our <a href="privacy-policy.html">Privacy Policy</a>.
+            </p>
+            <p>
+                If you do not agree to these Terms, you must not download, install, access, or use the App.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Informational Purpose & Financial Disclaimer</h2>
+            <div class="highlight-box">
+                <p><strong>IMPORTANT DISCLAIMER:</strong> Daily Expense: Track&Save is an expense tracking and budget utility designed strictly for personal informational and record-keeping purposes. The App does NOT provide financial, tax, investment, accounting, or legal advice.</p>
+            </div>
+            <p>
+                The calculations, budget alerts, category breakdowns, and transaction summaries provided in the App are based entirely on user-entered data and predefined mathematical formulations. We do not warrant the accuracy, completeness, or suitability of any figures or reports generated. You are solely responsible for all financial decisions, budgets, and tax filings you make.
+            </p>
+        </section>
+
+        <section>
+            <h2>3. License & Acceptable Use</h2>
+            <p>
+                Subject to your compliance with these Terms, the Developer grants you a personal, non-exclusive, non-transferable, revocable, and limited license to download, install, and use the App on Android devices that you own or control, solely for your personal, non-commercial purposes.
+            </p>
+            <p>You agree NOT to:</p>
+            <ul>
+                <li>Modify, reverse engineer, decompile, disassemble, or attempt to derive the source code of the App.</li>
+                <li>Bypass, disable, or tamper with security or digital rights features, including ad-delivery mechanisms or in-app billing verification systems.</li>
+                <li>Rent, lease, lend, sell, sublicense, distribute, or make the App available to any third party.</li>
+                <li>Use the App in any unlawful manner, for any illegal purpose, or in breach of Google Play Developer Program policies.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. User Data & Device Storage</h2>
+            <ul>
+                <li><strong>Local Storage:</strong> Your expense entries, categories, notes, dates, and budget limits are stored locally on your device within Android's private, sandboxed SQLite (Room) database.</li>
+                <li><strong>No Mandatory Account Registration:</strong> The App does not require a phone number, password, or mandatory account creation to track expenses.</li>
+                <li><strong>User Responsibility for Backups:</strong> Because your data resides locally on your device, you are responsible for maintaining periodic backups. The App provides CSV export and JSON backup/restore features to help you safeguard your records. We are not liable for any data loss resulting from device loss, hardware malfunction, factory reset, or uninstallation.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Subscriptions & In-App Purchases (Pro Tier)</h2>
+            <p>
+                The App offers an optional premium auto-renewing subscription tier ("Pro Plan") that provides an ad-free experience, unlimited custom categories, advanced analytics, and CSV data export/import capabilities.
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subscription Tier</th>
+                            <th>Pricing</th>
+                            <th>Billing Frequency</th>
+                            <th>Entitlement Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pro Monthly</strong></td>
+                            <td>₹149 / month</td>
+                            <td>Every month until cancelled</td>
+                            <td>Zero ads, unlimited categories, full analytics, CSV exports & imports</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pro Annual</strong></td>
+                            <td>₹1,200 / year</td>
+                            <td>Every 12 months (~33% discount)</td>
+                            <td>Zero ads, unlimited categories, full analytics, CSV exports & imports</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Billing Terms & Cancellation Policy:</h3>
+            <ul>
+                <li><strong>Google Play In-App Billing:</strong> All subscription transactions, currency conversions, and payments are processed exclusively through Google Play. We do not receive, store, or process any payment card, UPI, or banking information.</li>
+                <li><strong>Automatic Renewal:</strong> Your subscription renews automatically at the end of each billing period unless you cancel it at least 24 hours prior to the renewal date.</li>
+                <li><strong>How to Cancel:</strong> You can manage, change, or cancel your subscription at any time directly through Google Play:
+                    <br><em>Open Google Play Store &rarr; Tap your Profile Icon (top right) &rarr; Payments & Subscriptions &rarr; Subscriptions &rarr; Select "Daily Expense: Track&Save" &rarr; Tap "Cancel Subscription"</em>.
+                </li>
+                <li><strong>Refunds:</strong> Refund requests are governed directly by Google Play's standard refund policies. To request a refund, please follow Google Play's refund guidelines at <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer">support.google.com/googleplay</a>.</li>
+                <li><strong>Cancellation Effective Date:</strong> When you cancel an active subscription, your Pro benefits remain active until the end of your current paid billing period, after which your account reverts to the Free tier without deleting any of your saved financial transactions or custom categories.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Advertisements (Free Tier)</h2>
+            <p>
+                The Free tier of the App displays third-party advertisements delivered via <strong>Google AdMob</strong> (including banner, native, and interstitial advertisements). By using the Free tier, you agree to the display of these advertisements. Upgrading to the Pro Plan immediately disables all third-party advertisements and related advertising tracking code.
+            </p>
+        </section>
+
+        <section>
+            <h2>7. Intellectual Property</h2>
+            <p>
+                The App, including its visual interface, design, graphics, branding, software code, icons, and compilation, is the intellectual property of <strong>nikhilcrlabs</strong> and is protected by copyright, trademark, and other applicable intellectual property laws. You acquire no ownership rights in the App other than the limited license explicitly granted herein.
+            </p>
+        </section>
+
+        <section>
+            <h2>8. Disclaimer of Warranties</h2>
+            <p>
+                TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES, CONDITIONS, OR GUARANTEES OF ANY KIND, EITHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING WITHOUT LIMITATION WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+            </p>
+            <p>
+                WE DO NOT WARRANT THAT THE OPERATION OF THE APP WILL BE UNINTERRUPTED, BUG-FREE, OR SECURE, OR THAT ANY DEFECTS WILL BE IMMEDIATELY CORRECTED.
+            </p>
+        </section>
+
+        <section>
+            <h2>9. Limitation of Liability</h2>
+            <p>
+                TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL NIKHILCRLABS, ITS DEVELOPERS, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING LOSS OF DATA, LOSS OF PROFITS, FINANCIAL LOSSES, OR DEVICE REPAIR COSTS ARISING OUT OF OR IN CONNECTION WITH YOUR USE OR INABILITY TO USE THE APP, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+            </p>
+            <p>
+                OUR TOTAL AGGREGATE LIABILITY ARISING FROM OR RELATING TO THESE TERMS OR THE APP SHALL NOT EXCEED THE TOTAL AMOUNT PAID BY YOU FOR IN-APP SUBSCRIPTIONS IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.
+            </p>
+        </section>
+
+        <section>
+            <h2>10. Modifications to Terms</h2>
+            <p>
+                We reserve the right to revise or update these Terms at any time. When modifications occur, we will update the "Effective Date" at the top of this document. Continued use of the App following any changes indicates your acknowledgment and acceptance of the revised Terms.
+            </p>
+        </section>
+
+        <section>
+            <h2>11. Governing Law & Dispute Resolution</h2>
+            <p>
+                These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law principles. Any dispute arising out of or related to these Terms or the App shall be subject to the exclusive jurisdiction of the competent courts located in Karnataka, India.
+            </p>
+        </section>
+
+        <section>
+            <h2>12. Contact Information</h2>
+            <p>
+                If you have questions, feedback, or legal inquiries concerning these Terms of Service, please contact us:
+            </p>
+            <div class="highlight-box">
+                <p>
+                    <strong>Developer / Publisher:</strong> nikhilcrlabs<br>
+                    <strong>Application Name:</strong> Daily Expense: Track&Save<br>
+                    <strong>Package Name:</strong> <code>com.spendsense.xydgqk</code><br>
+                    <strong>Support Email:</strong> <a href="mailto:nikhilcr023@gmail.com">nikhilcr023@gmail.com</a>
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 nikhilcrlabs. All rights reserved.</p>
+            <p>Daily Expense: Track&Save &bull; Package: com.spendsense.xydgqk</p>
+        </footer>
+    </div>
+</body>
+</html>
