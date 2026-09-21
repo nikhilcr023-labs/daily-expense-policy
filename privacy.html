@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Daily Expense: Track&Save</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+            --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #3b82f6;
+                --primary-dark: #60a5fa;
+                --bg-color: #0b0f19;
+                --surface-color: #131b2e;
+                --text-main: #f1f5f9;
+                --text-muted: #94a3b8;
+                --border-color: #1e293b;
+                --badge-bg: #1e293b;
+                --badge-text: #60a5fa;
+                --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.68;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background-color: var(--surface-color);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px 18px;
+            }
+        }
+
+        .header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 700;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 2px;
+        }
+
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .badge {
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .app-meta {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 6px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            background: var(--bg-color);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .meta-item strong {
+            display: block;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 2px;
+        }
+
+        .meta-item span {
+            color: var(--text-muted);
+            word-break: break-all;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 32px 0 12px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 20px 0 8px;
+            color: var(--text-main);
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        ul, ol {
+            margin: 0 0 16px 22px;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: var(--bg-color);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 16px 0 24px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        td {
+            color: var(--text-muted);
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-links">
+            <a href="privacy-policy.html" class="active">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+
+        <header class="header">
+            <div class="badge-group">
+                <span class="badge">Privacy Policy</span>
+                <span class="badge">Google Play Compliant</span>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="app-meta">Official privacy policy for <strong>Daily Expense: Track&Save</strong></p>
+
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <strong>Application Name</strong>
+                    <span>Daily Expense: Track&Save</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Developer / Organization</strong>
+                    <span>nikhilcrlabs</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Package Name</strong>
+                    <span>com.spendsense.xydgqk</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Support Email</strong>
+                    <span><a href="mailto:nikhilcr023@gmail.com">nikhilcr023@gmail.com</a></span>
+                </div>
+                <div class="meta-item">
+                    <strong>Last Updated</strong>
+                    <span>September 21, 2026</span>
+                </div>
+            </div>
+        </header>
+
+        <section>
+            <h2>1. Introduction & Overview</h2>
+            <p>
+                Welcome to <strong>Daily Expense: Track&Save</strong> ("the App"), developed and published by <strong>nikhilcrlabs</strong> ("we", "us", or "our"). 
+                We are committed to respecting your privacy, protecting your personal financial information, and maintaining full transparency in accordance with the <strong>Google Play Developer Program Policies</strong> and applicable global data protection regulations.
+            </p>
+            <p>
+                This Privacy Policy explains how our Android application (Package Name: <code>com.spendsense.xydgqk</code>) handles user data across both our ad-supported Free tier and our premium Pro Subscription tiers.
+            </p>
+        </section>
+
+        <section>
+            <h2>2. Information We Handle & Collect</h2>
+            <div class="highlight-box">
+                <p><strong>Zero Mandatory Account Registration:</strong> No phone number, OTP, email address, password, or sign-in is required to use Daily Expense: Track&Save. All your financial logs remain stored locally on your device.</p>
+            </div>
+            <p>We believe in strict data minimization. The types of data handled by the App include:</p>
+            <ul>
+                <li><strong>Financial & Expense Records:</strong> Transaction amounts, custom category labels (e.g., Food, Travel, Shopping, Utilities, Entertainment, or user-created categories), dates, notes, and monthly budget limits entered by you. <em>All transaction and financial records are stored 100% locally on your device in a sandboxed SQLite (Room) database. We never transmit, upload, or sell your financial data to any external server.</em></li>
+                <li><strong>Device & Diagnostics Data:</strong> Non-personally identifiable technical telemetry (such as device model, OS version, and crash diagnostics) may be collected automatically by Google Play Services to maintain app stability and performance.</li>
+                <li><strong>User-Generated Backups:</strong> If you export your transactions to CSV or generate a JSON backup, the resulting files are created directly on your local device storage under your explicit control.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Third-Party Services & Advertisements (Free Plan)</h2>
+            <div class="highlight-box">
+                <p><strong>Advertising Disclosure:</strong> The Free tier of Daily Expense: Track&Save is supported by third-party advertisements delivered via <strong>Google AdMob</strong>.</p>
+            </div>
+            <p>
+                To provide and maintain the Free tier, our app integrates the <strong>Google Mobile Ads (AdMob) SDK</strong>. Google AdMob and its advertising technology partners may collect and use information to deliver relevant, personalized, or non-personalized advertisements adhering to Google Play policies.
+            </p>
+            <p>AdMob may collect:</p>
+            <ul>
+                <li>IP address and general coarse location inferred from IP (country/region).</li>
+                <li>Android Advertising ID (GAID), which you can reset or delete at any time in your Android system settings (<em>Settings &rarr; Google &rarr; Ads</em>).</li>
+                <li>Diagnostic, performance, and ad interaction metrics to combat ad fraud and ensure proper ad serving.</li>
+            </ul>
+            <p>
+                To learn more about how Google processes information for advertising, please review:
+            </p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+                <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a></li>
+            </ul>
+            <p>
+                <strong>100% Ad-Free Pro Tier:</strong> Users who subscribe to the Pro Plan enjoy a completely ad-free experience. When a Pro subscription is active, all AdMob ad banners, interstitials, and ad-tracking requests are disabled.
+            </p>
+        </section>
+
+        <section>
+            <h2>4. Subscriptions & In-App Purchases</h2>
+            <p>
+                Daily Expense: Track&Save offers optional auto-renewing subscriptions ("Pro Plan") providing premium digital capabilities:
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plan</th>
+                            <th>Price</th>
+                            <th>Billing Frequency</th>
+                            <th>Benefits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Pro Monthly</strong></td>
+                            <td>₹149</td>
+                            <td>Monthly (auto-renewing)</td>
+                            <td>Zero ads, unlimited custom categories, advanced analytics, CSV export & import</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pro Annual</strong></td>
+                            <td>₹1,200</td>
+                            <td>Yearly (~33% savings)</td>
+                            <td>Zero ads, unlimited custom categories, advanced analytics, CSV export & import</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Payment Processing & Security:</h3>
+            <ul>
+                <li><strong>Secure Google Play Billing:</strong> All purchase transactions and subscription lifecycles are processed directly through <strong>Google Play In-App Billing</strong>. The developer does NOT collect, receive, or store credit card numbers, debit cards, UPI IDs, bank account details, or billing addresses.</li>
+                <li><strong>Automatic Renewal & Cancellation:</strong> Subscriptions renew automatically unless canceled at least 24 hours prior to the end of the current billing cycle. You can manage or cancel your subscription at any time via <em>Google Play Store &rarr; Profile Icon &rarr; Payments & Subscriptions &rarr; Subscriptions</em>.</li>
+                <li><strong>Data Retention on Expiry:</strong> When a Pro subscription expires or is canceled, your custom categories, expense logs, and historical transactions remain completely safe and are never deleted.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Application Permissions</h2>
+            <p>
+                The App complies with the principle of least privilege and requests only standard install-time permissions:
+            </p>
+            <ul>
+                <li><code>android.permission.INTERNET</code>: Required for loading AdMob advertisements (on the Free tier) and verifying Google Play subscription status.</li>
+                <li><code>android.permission.ACCESS_NETWORK_STATE</code>: Used to verify active network connectivity before querying Google Play or loading ads.</li>
+            </ul>
+            <p>
+                <strong>Zero Sensitive Permissions:</strong> We do <strong>NOT</strong> request access to sensitive hardware or personal data. We do not access your device location (GPS), camera, microphone, contacts, phone calls, SMS messages, or broad media storage. User-initiated file exports (CSV/JSON) are handled safely via Android's modern Storage Access Framework and FileProvider.
+            </p>
+        </section>
+
+        <section>
+            <h2>6. Data Storage, Security & Encryption</h2>
+            <ul>
+                <li><strong>Local Storage:</strong> All user financial entries, budget configurations, and categories are saved in Android's sandboxed local application directory on your physical device, inaccessible to other applications.</li>
+                <li><strong>Encryption in Transit:</strong> Any necessary network communication (such as communication with Google AdMob and Google Play Billing APIs) is strictly encrypted using industry-standard Transport Layer Security (TLS 1.3 / HTTPS).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>7. User Rights & Data Deletion (Google Play Data Safety)</h2>
+            <p>
+                You have absolute ownership and control over your financial data. We provide several easy methods to manage, export, and delete your data:
+            </p>
+            <ul>
+                <li><strong>In-App Deletion:</strong> You can edit or delete individual transactions and custom categories directly from the Ledger and Category screens at any time.</li>
+                <li><strong>Export Data:</strong> You can export all your financial records into a standard CSV file at any time from the Settings screen.</li>
+                <li><strong>Complete Data Purge:</strong> You can permanently wipe all stored data by going to your Android device's <em>Settings &rarr; Apps &rarr; Daily Expense: Track&Save &rarr; Storage & Cache &rarr; Clear Storage / Clear Data</em>, or by uninstalling the application. This immediately and irreversibly deletes all local databases and preferences.</li>
+                <li><strong>Data Deletion Requests:</strong> Because we do not operate user accounts or external servers that store your financial logs, your data exists exclusively on your device. For questions or guidance on data deletion, you may also email us at <a href="mailto:nikhilcr023@gmail.com">nikhilcr023@gmail.com</a>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>8. Children's Privacy (COPPA Compliance)</h2>
+            <p>
+                Daily Expense: Track&Save is intended for general audiences aged 13 and older (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect, solicit, or maintain personally identifiable information from children under the age of 13. If you believe a child has provided us with personal information, please contact us immediately, and we will take appropriate measures to delete it.
+            </p>
+        </section>
+
+        <section>
+            <h2>9. Policy Changes & Updates</h2>
+            <p>
+                We may revise this Privacy Policy periodically to reflect app updates, Google Play policy changes, or legal requirements. When updates occur, the "Last Updated" date at the top of this document will be refreshed. Continued use of the App following any published updates signifies your acceptance of the revised policy.
+            </p>
+        </section>
+
+        <section>
+            <h2>10. Developer Contact & Support</h2>
+            <p>
+                For any questions, concerns, or requests regarding this Privacy Policy or your data, please contact the developer:
+            </p>
+            <div class="highlight-box">
+                <p>
+                    <strong>Developer / Organization:</strong> nikhilcrlabs<br>
+                    <strong>Application Name:</strong> Daily Expense: Track&Save<br>
+                    <strong>Package Name:</strong> <code>com.spendsense.xydgqk</code><br>
+                    <strong>Support Email:</strong> <a href="mailto:nikhilcr023@gmail.com">nikhilcr023@gmail.com</a>
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 nikhilcrlabs. All rights reserved.</p>
+            <p>Daily Expense: Track&Save &bull; Package: com.spendsense.xydgqk</p>
+        </footer>
+    </div>
+</body>
+</html>
